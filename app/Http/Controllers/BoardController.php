@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Score as ScoreEloquent;
+use App\Score ;
 
 use Route;
 //use View;
@@ -15,7 +15,9 @@ class BoardController extends Controller
 {
 
 	public function getIndex(){
-		return view('board',['scores'=>ScoreEloquent::with('student')->orderByTotal()->orderBySubject()->get()]);
+        $scores=Score::orderByTotal()->orderBySubject()->get();
+	    $data=['scores'=>$scores];
+		return view('board', $data);
 	}
 
     public function getName(){
