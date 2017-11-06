@@ -1,8 +1,8 @@
 /vendor
 /node_modules
 /public/storage
+/.idea
+/.vscode
 Homestead.yaml
 Homestead.json
 .env
-/.idea
-/.vscode
